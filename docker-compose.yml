@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  url-cache:
+    image: memcached:alpine
+    container_name: url-cache
+    ports:
+      - 11211:11211
+  url-shortener:
+    build: https://github.com/zulhilmizainuddin/url-shortener.git
+    container_name: url-shortener
+    ports:
+      - 7000:7000
